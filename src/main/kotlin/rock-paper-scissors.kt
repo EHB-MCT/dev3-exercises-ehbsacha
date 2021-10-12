@@ -1,8 +1,7 @@
 fun main(){
     //The options and the defining of the random number wich chooses the option.
     val options = arrayOf("rock", "paper", "scissors")
-    val randomNumber = (0..2).random()
-    val computer = options[randomNumber]
+    val computer = options.random()
 
     //The input of the user and the readLine.
     print("Type your answer here: ")
@@ -36,9 +35,11 @@ fun main(){
         }
 
         else -> {
-            print("You typed something rock")
+            print("You typed something wrong")
         }
     }
 
+    println("Computer chose: " + computer)
+    println("you chose: " + computer)
 
 }
