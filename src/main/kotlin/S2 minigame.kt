@@ -37,6 +37,7 @@ fun rps(){
     //The options and the defining of the random number wich chooses the option.
     val options = arrayOf("rock", "paper", "scissors")
     val computer = options.random()
+    println(computer)
 
     //The input of the user and the readLine.
     println()
@@ -95,6 +96,22 @@ fun guess(){
     print("U wint! met ")
     println(guess)
 
+    wannaLive()
+}
+
+fun wannaLive(){
+    //Intro text
+    println()
+    println("Do you want to live?")
+    println("If so, type yes")
+    print("Type here: ")
+
+    //Player input read
+    var wannaSurvive = readLine()
+
+    if(wannaSurvive == "yes" || wannaSurvive == "Yes"){
+        alive()
+    }
 }
 
 fun alive(){
