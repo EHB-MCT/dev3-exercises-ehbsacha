@@ -44,6 +44,8 @@ fun rps(){
     print("Type your answer here: ")
     val rpsOption = readLine()
 
+    println("Computer chose: " + computer)
+    println("you chose: " + rpsOption)
     //checking if you won or lost
     when(rpsOption) {
         //If you chose rock it determines if you won!
@@ -51,6 +53,7 @@ fun rps(){
                 println("gelijkgespeeld")
             } else if (computer == "scissors"){
                 println("U wint!")
+                guess()
             } else if (computer == "paper"){
                 println("U verliest!")
             }
@@ -59,6 +62,7 @@ fun rps(){
                 println("gelijkgespeeld")
             } else if (computer == "rock"){
                 println("U wint!")
+                guess()
             } else if (computer == "scissors"){
                 println("U verliest!")
             }
@@ -67,6 +71,7 @@ fun rps(){
                 println("gelijkgespeeld")
             } else if (computer == "paper"){
                 println("U wint!")
+                guess()
             } else if (computer == "rock"){
                 println("U verliest!")
             }
@@ -76,8 +81,20 @@ fun rps(){
             }
     }
 
-    println("Computer chose: " + computer)
-    println("you chose: " + rpsOption)
+
+}
+
+fun guess(){
+    //The text input
+    println()
+    println("Choose the number between 1 and 100")
+    print("Type here ")
+
+    //Read dice player input
+    var guess = readLine()
+    print("U wint! met ")
+    println(guess)
+
 }
 
 fun alive(){
@@ -87,5 +104,4 @@ fun alive(){
 
 fun dead(){
     println("You died a horrible death.")
-    print("The door fell on you")
 }
