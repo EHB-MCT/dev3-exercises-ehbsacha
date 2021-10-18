@@ -37,7 +37,6 @@ fun rps(){
     //The options and the defining of the random number wich chooses the option.
     val options = arrayOf("rock", "paper", "scissors")
     val computer = options.random()
-    println(computer)
 
     //The input of the user and the readLine.
     println()
@@ -81,8 +80,6 @@ fun rps(){
                 print("You typed something wrong")
             }
     }
-
-
 }
 
 fun guess(){
@@ -112,6 +109,39 @@ fun wannaLive(){
     if(wannaSurvive == "yes" || wannaSurvive == "Yes"){
         alive()
     }
+
+    kickTheChicken()
+}
+
+fun kickTheChicken(){
+    var chickenHealth = 3;
+    println()
+    println("Everyone knows the annoying chickens in the assassin's creed games right?")
+    println("Now you get the chance to kick the annoying chicken.")
+    println("Never kick any chickens in real life.")
+    println("But if you do, 'Better Call Saul'.")
+    println()
+    println("Boss chicken appears. EPIC MUSIIIC")
+    print("Type kick to kick the chicken: ")
+
+    while(chickenHealth > 0){
+        var chickenKick = readLine()
+        if(chickenKick == "kick" || chickenKick == "Kick"){
+            chickenHealth--
+            if(chickenHealth == 0){
+                println("You killed the annoying chicken! You terrible human being.")
+            }else {
+                print("Only ")
+                print(chickenHealth)
+                println(" health over!")
+            }
+        }
+    }
+
+    println()
+    println("YOU WON!!!")
+    println()
+
 }
 
 fun alive(){
