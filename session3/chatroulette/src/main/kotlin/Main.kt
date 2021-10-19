@@ -1,7 +1,6 @@
 fun main() {
-    var stan = Person("Stan")
-    var lauren = Person("Lauren")
-    var persons = arrayOf(stan,lauren)
+    var persons = arrayOf(Student("Stan"),Student("Lauren"),Teacher("Frank"),Comedian("Emma"))
     var randomPerson = persons.random()
-    randomPerson.hi()
+    randomPerson.introduce()
+    randomPerson.talk()
 }
