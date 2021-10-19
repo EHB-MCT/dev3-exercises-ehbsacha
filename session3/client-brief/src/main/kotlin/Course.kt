@@ -8,5 +8,5 @@ class Course(
     val module: String,
     val required: Boolean,
     val requirements: String
-    ){
+){
 }

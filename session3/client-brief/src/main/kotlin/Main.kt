@@ -1,5 +1,3 @@
-// Course.kt
-
 fun main(){
     val design1 = Course(
         "Design",
