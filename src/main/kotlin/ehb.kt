@@ -1,4 +1,4 @@
-// course.kt
+// Course.kt
 
 fun main(){
     val design1 = Course(
