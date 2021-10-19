@@ -50,35 +50,35 @@ fun rps(){
     when(rpsOption) {
         //If you chose rock it determines if you won!
         "rock" -> if (computer == "rock") {
-                println("gelijkgespeeld")
-            } else if (computer == "scissors"){
-                println("U wint!")
-                guess()
-            } else if (computer == "paper"){
-                println("U verliest!")
-            }
+            println("gelijkgespeeld")
+        } else if (computer == "scissors"){
+            println("U wint!")
+            guess()
+        } else if (computer == "paper"){
+            println("U verliest!")
+        }
         //If you chose paper it determines if you won!
         "paper" -> if (computer == "paper") {
-                println("gelijkgespeeld")
-            } else if (computer == "rock"){
-                println("U wint!")
-                guess()
-            } else if (computer == "scissors"){
-                println("U verliest!")
-            }
+            println("gelijkgespeeld")
+        } else if (computer == "rock"){
+            println("U wint!")
+            guess()
+        } else if (computer == "scissors"){
+            println("U verliest!")
+        }
         //If you chose scissors it determines if you won!
         "scissors" -> if (computer == "scissors") {
-                println("gelijkgespeeld")
-            } else if (computer == "paper"){
-                println("U wint!")
-                guess()
-            } else if (computer == "rock"){
-                println("U verliest!")
-            }
+            println("gelijkgespeeld")
+        } else if (computer == "paper"){
+            println("U wint!")
+            guess()
+        } else if (computer == "rock"){
+            println("U verliest!")
+        }
 
-            else -> {
-                print("You typed something wrong")
-            }
+        else -> {
+            print("You typed something wrong")
+        }
     }
 }
 
