@@ -1,0 +1,49 @@
+Onderdeel 1:
+	SELECT productName FROM products WHERE productCode = "S24_3856";
+
+
+	SELECT AVG(buyPrice) FROM products;
+
+
+	SELECT productName FROM products WHERE productName LIKE '%Ford%';
+
+
+	SELECT MAX(buyPrice) FROM products;
+
+
+	SELECT productName FROM products WHERE productLine = "ships";
+
+
+Onderdeel 2:
+	SELECT Count(*) FROM orders WHERE customerNumber = 328;
+
+
+	SELECT COUNT(*) FROM orders INNER JOIN customers
+	ON orders.customerNumber = customers.customerNumber
+	WHERE customers.contactFirstName = "Julie" AND customers.contactLastName = "Young";
+
+
+	SELECT COUNT(*) FROM customers WHERE creditLimit = 0;
+
+
+	SELECT customers.customerName, AVG(payments.amount)
+	FROM payments INNER JOIN customers
+	on payments.customerNumber = customers.customerNumber
+	GROUP BY customers.customerNumber
+	ORDER BY AVG(payments.amount) DESC LIMIT 1;
+
+
+Onderdeel 3:
+	SELECT customers.contactFirstName, customers.contactLastName, SUM(payments.amount)
+	FROM payments INNER JOIN customers ON payments.customerNumber = customers.customerNumber
+	WHERE payments.paymentDate LIKE "%2004%" AND customers.contactFirstName = "William";
+
+
+	SELECT customers.contactFirstName, customers.contactLastName, employees.firstName, employees.lastName
+	FROM customers INNER JOIN employees ON customers.salesRepEmployeeNumber = employees.employeeNumber;
+
+
+	SELECT offices.* FROM customers
+	INNER JOIN employees ON customers.salesRepEmployeeNumber = employees.employeeNumber 
+	INNER JOIN offices ON employees.officeCode = offices.officeCode
+	WHERE customers.customerName = "The Sharp Gifts Warehouse";
