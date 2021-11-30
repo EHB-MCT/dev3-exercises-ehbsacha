@@ -1,3 +1,4 @@
 fun main(){
-    println("hello world!")
+    var newword = Word("Niño","jongen","spaans")
+    println(newword.original)
 }
