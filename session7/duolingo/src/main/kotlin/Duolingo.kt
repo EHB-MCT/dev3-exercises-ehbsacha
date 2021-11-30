@@ -1,4 +1,5 @@
 class Duolingo(
+    val roundSize: Int = 5
 ){
     val words = mutableListOf<Word>(
         Word("Niño","jongen","spaans"),
@@ -25,23 +26,50 @@ class Duolingo(
     )
 
     fun play(){
-        words.shuffle()
-        val five = words.take(5)
+        val currentWords = words.shuffled().take(roundSize).toMutableSet()
+//        println(currentWords.count())
         println()
-        five.forEach{
-            println("Wat betekent " + it.original + " in het " + it.language + "?")
+
+        while (currentWords.isNotEmpty()){
+            val selecedWord = currentWords.random()
+            println("Wat betekent " + selecedWord.original + " in het " + selecedWord.language + "?")
             print("Type hier: ")
             val userinput = readLine()
-            if(userinput == it.translated){
+
+            if(userinput == selecedWord.translated){
                 println("Helemaal juist!")
                 println()
+                currentWords.remove(selecedWord)
             } else {
                 println("Helemaal fout jij slecht mens!")
                 println("Andere talen proberen zo kapot te maken.")
-                println(it.original + " betekent " + it.translated + ", maar in het " + it.language)
+                println(selecedWord.original + " betekent " + selecedWord.translated + ", maar in het " + selecedWord.language)
                 println()
             }
+            println("Nog " + currentWords.count() + " te gaan!")
+            println()
         }
+
+
+//        println()
+//        currentFive.forEach{
+//
+//            println("Wat betekent " + it.original + " in het " + it.language + "?")
+//
+//            print("Type hier: ")
+//            val userinput = readLine()
+//
+//            if(userinput == it.translated){
+//                println("Helemaal juist!")
+//                println()
+//                currentFive.remove(it)
+//            } else {
+//                println("Helemaal fout jij slecht mens!")
+//                println("Andere talen proberen zo kapot te maken.")
+//                println(it.original + " betekent " + it.translated + ", maar in het " + it.language)
+//                println()
+//            }
+//        }
     }
 
 }
