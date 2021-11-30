@@ -1,4 +1,4 @@
 fun main(){
-    var newword = Word("Niño","jongen","spaans")
-    println(newword.original)
+    val duolingo = Duolingo()
+    duolingo.play()
 }

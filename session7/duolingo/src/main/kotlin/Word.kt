@@ -1,6 +1,6 @@
 class Word(
-    var original: String,
-    var translated: String,
-    var language: String
+    val original: String,
+    val translated: String,
+    val language: String
 ){
 }
