@@ -27,8 +27,20 @@ class Duolingo(
     fun play(){
         words.shuffle()
         val five = words.take(5)
+        println()
         five.forEach{
-            println(it.original)
+            println("Wat betekent " + it.original + " in het " + it.language + "?")
+            print("Type hier: ")
+            val userinput = readLine()
+            if(userinput == it.translated){
+                println("Helemaal juist!")
+                println()
+            } else {
+                println("Helemaal fout jij slecht mens!")
+                println("Andere talen proberen zo kapot te maken.")
+                println(it.original + " betekent " + it.translated + ", maar in het " + it.language)
+                println()
+            }
         }
     }
 
