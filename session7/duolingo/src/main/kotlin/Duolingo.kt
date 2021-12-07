@@ -1,7 +1,11 @@
 class Duolingo(
-    val roundSize: Int = 5
+    var roundSize: Int = 5,
+    var preferedLanguage: String
+
 ){
     val words = mutableListOf<Word>(
+
+        //Mijn spaanse woorden met nederlandse vertaling
         Word("Niño","jongen","spaans"),
         Word("Niña","meisje","spaans"),
         Word("boleto","ticket","spaans"),
@@ -13,6 +17,7 @@ class Duolingo(
         Word("gato","kat","spaans"),
         Word("perro","hond","spaans"),
 
+        //Mijn zweedse woorden met nederlandse vertaling
         Word("bil","auto","zweeds"),
         Word("Vän","vriend","zweeds"),
         Word("Bra","goed","zweeds"),
@@ -25,10 +30,12 @@ class Duolingo(
         Word("Planka","zwartrijden","zweeds")
     )
 
+    //Mijn duolingo playbutton
     fun play(){
-        val currentWords = words.shuffled().take(roundSize).toMutableSet()
-//        println(currentWords.count())
-        println()
+        val wordsInLanguage = words.filter { it.language == preferedLanguage }
+        val currentWords = wordsInLanguage.shuffled().take(roundSize).toMutableSet()
+
+        println() //A line for a clean view
 
         while (currentWords.isNotEmpty()){
             val selecedWord = currentWords.random()
@@ -37,39 +44,19 @@ class Duolingo(
             val userinput = readLine()
 
             if(userinput == selecedWord.translated){
+                //The visible text when getting it right
                 println("Helemaal juist!")
-                println()
-                currentWords.remove(selecedWord)
+                println() //A line for a clean view
+                currentWords.remove(selecedWord) //Removing the word when getting it right
             } else {
+                //The visible text when making a mistake
                 println("Helemaal fout jij slecht mens!")
                 println("Andere talen proberen zo kapot te maken.")
                 println(selecedWord.original + " betekent " + selecedWord.translated + ", maar in het " + selecedWord.language)
-                println()
+                println() //A line for a clean view
             }
-            println("Nog " + currentWords.count() + " te gaan!")
-            println()
+            println("Nog " + currentWords.count() + " te gaan!") //A countdown
+            println() //A line for a clean view
         }
-
-
-//        println()
-//        currentFive.forEach{
-//
-//            println("Wat betekent " + it.original + " in het " + it.language + "?")
-//
-//            print("Type hier: ")
-//            val userinput = readLine()
-//
-//            if(userinput == it.translated){
-//                println("Helemaal juist!")
-//                println()
-//                currentFive.remove(it)
-//            } else {
-//                println("Helemaal fout jij slecht mens!")
-//                println("Andere talen proberen zo kapot te maken.")
-//                println(it.original + " betekent " + it.translated + ", maar in het " + it.language)
-//                println()
-//            }
-//        }
     }
-
 }
