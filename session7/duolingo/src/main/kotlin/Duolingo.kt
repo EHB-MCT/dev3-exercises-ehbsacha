@@ -2,7 +2,7 @@ class Duolingo(
     var roundSize: Int = 5,
     var preferedLanguage: String
 ){
-    val words = mutableListOf<Word>(
+    var words = mutableListOf<Word>(
 
         //Mijn spaanse woorden met nederlandse vertaling
         Spanish("Niño","jongen"),
@@ -29,10 +29,18 @@ class Duolingo(
         Swedish("Planka","zwartrijden")
     )
 
+    fun playEasy() {
+        var theWords = words.filter { it.language == preferedLanguage }
+        play(theWords.toMutableList())
+    }
+    fun playHard() {
+        var theWords = words
+        play(theWords.toMutableList())
+    }
+
     //Mijn duolingo playbutton
-    fun play(){
-        val wordsInLanguage = words.filter { it.language == preferedLanguage }
-        val currentWords = wordsInLanguage.shuffled().take(roundSize).toMutableSet()
+    fun play(words: MutableList<Word>){
+        val currentWords = words.shuffled().take(roundSize).toMutableSet()
 
         println() //A line for a clean view
 
