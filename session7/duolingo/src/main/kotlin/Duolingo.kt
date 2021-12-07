@@ -1,33 +1,32 @@
 class Duolingo(
     var roundSize: Int = 5,
     var preferedLanguage: String
-
 ){
     val words = mutableListOf<Word>(
 
         //Mijn spaanse woorden met nederlandse vertaling
-        Word("Niño","jongen","spaans"),
-        Word("Niña","meisje","spaans"),
-        Word("boleto","ticket","spaans"),
-        Word("manzanas","appels","spaans"),
-        Word("maleta","koffer","spaans"),
-        Word("aeropuerto","luchthaven","spaans"),
-        Word("pan","brood","spaans"),
-        Word("cerrado","gesloten","spaans"),
-        Word("gato","kat","spaans"),
-        Word("perro","hond","spaans"),
+        Spanish("Niño","jongen"),
+        Spanish("Niña","meisje"),
+        Spanish("boleto","ticket"),
+        Spanish("manzanas","appels"),
+        Spanish("maleta","koffer"),
+        Spanish("aeropuerto","luchthaven"),
+        Spanish("pan","brood"),
+        Spanish("cerrado","gesloten"),
+        Spanish("gato","kat"),
+        Spanish("perro","hond"),
 
         //Mijn zweedse woorden met nederlandse vertaling
-        Word("bil","auto","zweeds"),
-        Word("Vän","vriend","zweeds"),
-        Word("Bra","goed","zweeds"),
-        Word("Tystnad","stilte","zweeds"),
-        Word("Duktig","getalenteerd","zweeds"),
-        Word("Älskar","liefde","zweeds"),
-        Word("Leende","glimlach","zweeds"),
-        Word("Sommarmorgon","zomerochtend","zweeds"),
-        Word("Gift","getrouwd","zweeds"),
-        Word("Planka","zwartrijden","zweeds")
+        Swedish("bil","auto"),
+        Swedish("Vän","vriend"),
+        Swedish("Bra","goed"),
+        Swedish("Tystnad","stilte"),
+        Swedish("Duktig","getalenteerd"),
+        Swedish("Älskar","liefde"),
+        Swedish("Leende","glimlach"),
+        Swedish("Sommarmorgon","zomerochtend"),
+        Swedish("Gift","getrouwd"),
+        Swedish("Planka","zwartrijden")
     )
 
     //Mijn duolingo playbutton
