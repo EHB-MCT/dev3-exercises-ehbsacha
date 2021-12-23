@@ -2,7 +2,7 @@ class Duolingo(
     var roundSize: Int = 5,
     var preferedLanguage: String
 ){
-    var words = mutableListOf<Word>(
+    var words = mutableSetOf<Word>(
 
         //Mijn spaanse woorden met nederlandse vertaling
         Spanish("Niño","jongen"),
